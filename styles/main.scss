@@ -1,3 +1,5 @@
+$opacity: 0.88;
+
 .hidden {
     visibility: hidden;
 }
@@ -11,7 +13,33 @@
   background-repeat:none;
 }
 
+.jumbotron {
+    opacity: $opacity;
+}
 #main {
     margin-left: 2em;
     margin-right: 2em;
+
+}
+#result {
+
+    padding: 1em;
+    margin: 1em 0;
+    background-color: rgba(255,255,255,$opacity);
+    overflow-y: scroll;
+
+    #lat, #lon {
+        font-size: smaller;
+    }
+
+    #forecast {
+
+    }
+}
+
+.red {
+    color: red;
+}
+.blue {
+    color: blue
 }
