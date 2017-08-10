@@ -1,53 +1,53 @@
-/* line 3, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 3, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .hidden {
   display: none; }
 
-/* line 6, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 6, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .float-right {
   float: right; }
 
-/* line 11, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 11, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .bg {
-  background-image: url("/assets/images/sunny_morning.jpg");
   height: 100%;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: none; }
 
-/* line 20, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 20, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .jumbotron {
-  opacity: 0.88; }
+  opacity: 0.65385;
+  background-color: #ded; }
 
-/* line 23, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 24, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 #main {
   margin-left: 2em;
   margin-right: 2em; }
 
-/* line 27, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 28, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 button {
   margin-top: 1em; }
 
-/* line 30, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 31, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 #result {
   padding: 1em;
   margin: 1em 0;
-  background-color: rgba(255, 255, 255, 0.88);
+  background-color: rgba(255, 255, 255, 0.85);
   overflow-y: scroll; }
-  /* line 37, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+  /* line 38, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
   #result #lat, #result #lon {
     font-size: smaller; }
 
-/* line 46, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 47, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .red {
   color: red; }
 
-/* line 49, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 50, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .blue {
   color: blue; }
 
-/* line 53, /Users/paulgoldman/Documents/GitHub/jQuery WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 54, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 footer {
-  background-color: rgba(255, 255, 255, 0.88); }
+  background-color: rgba(255, 255, 255, 0.85); }
 
 /*# sourceMappingURL=main.css.map */

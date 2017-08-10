@@ -3,8 +3,7 @@ $(document).ready(function () {
 
     
     $("#submitBtn").click(function () {
-        console.log("TEST");
-//         hide and clear existing fields
+
         $("#result").addClass('hidden');
         $("#googleMap").addClass('hidden');
 
@@ -24,8 +23,7 @@ var _imgBackURL = ".gif'/>";
 
 var _baseURL = "https://query.yahooapis.com/v1/public/yql?q=";
 var _geoLocationQuery = "select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D'";
-//var latitude = "";
-//var longitude = "";
+
 var jsonData = "";
 
 function handleResult(json){
@@ -45,7 +43,6 @@ function getData() {
 
     // create URL with user's query strings
     var userInput = $("#userLocation").val();
-//     console.log("User input: " + userInput);
     geoLocationQuery += encodeURI(userInput);
     geoLocationQuery += "')&format=json";
     baseURL += geoLocationQuery;
@@ -56,20 +53,67 @@ function setFields(){
     setCurrentWeather();
     setForecasts();
 }
+
+
 function setCurrentWeather() {
-    
-//    // UPDATE BACKGROUND BASED ON CURRENT TIME
-//    var currentTime = jsonData.lastBuildDate;
-//    console.log(currentTime);
-    
     
     // FORMAT TITLE
     var title = jsonData.item.title.split(' ');
     var splitIndex = title.indexOf('at');
     var formattedTitle = title.slice(0,splitIndex).join(" ");
     
-    // FORMAT CURRENT TIME
+
+    
+    // UPDATE BACKGROUND BASED ON CURRENT TIME
+    var desc = jsonData.item.condition.text;
     var time = jsonData.lastBuildDate.split(' ');
+    var currentTime = time[4].split(':')[0];
+    var amOrPm = time[5];
+    
+    // MORNING == between 6am-11am
+    // DAY == between 12pm-5pm
+    // EVENING == between 6pm-11pm
+    // NIGHT == between 12am-5am
+    var dayPeriod = "";
+    if (currentTime >= 6 && currentTime <= 11 && amOrPm == "AM")
+        dayPeriod = "morning";
+    else if (currentTime >= 12 && currentTime <= 5 && amOrPm == "PM")
+        dayPeriod = "day";
+    else if (currentTime >= 6 && currentTime <= 11 && amOrPm == "PM")
+        dayPeriod = "evening";
+    else
+        dayPeriod = "night";
+    
+    if (desc.indexOf("Rain") !== -1 || desc.indexOf("Shower") !== -1){
+        if (dayPeriod === "morning" || dayPeriod === "day")
+            $(".bg").css('background-image','url("/assets/images/rainy_day.jpg")');
+        else
+            $(".bg").css('background-image','url("/assets/images/rainy_night.jpg")');
+    }
+    else if (desc.indexOf("Cloudy") !== -1){
+        if (dayPeriod === "morning" || dayPeriod === "day")
+            $(".bg").css('background-image','url("/assets/images/partly_cloudy_day.jpg")');
+        else if (dayPeriod === "evening")
+            $(".bg").css('background-image','url("/assets/images/cloudy_evening.jpg")');
+        else
+            $(".bg").css('background-image','url("/assets/images/cloudy_night.jpg")');
+    }
+    else if (desc.indexOf("Sunny") !== -1 || desc.indexOf("Clear") !== -1){
+        if (dayPeriod === "morning" || dayPeriod === "day")
+            $(".bg").css('background-image','url("/assets/images/sunny_day.jpg")');
+        else
+            $(".bg").css('background-image','url("/assets/images/night.jpg")');
+    }
+    else if (desc.indexOf("Thunderstorms") !== -1)
+        $(".bg").css('background-image','url("/assets/images/stormy_night.jpg")');
+    
+    
+    $("body").addClass("bg");
+    
+    
+    
+    // FORMAT CURRENT TIME
+    
     var formattedTime = time[4] + ' ' + time[5] + ' ' + time[6];
     
     $("#currentWeather").append('<h4>' + formattedTitle + '</h4>');
@@ -78,18 +122,7 @@ function setCurrentWeather() {
     
     var temp = jsonData.item.condition.temp;
     $("#currentWeatherImg").append('<h2 id="temp">' + temp + '&#176;F</h2>');
-    
-//    $("#cityState").text($("#userLocation").val().toUpperCase());
-//    $("#lat").text(jsonData.item.lat);
-//    $("#lon").text(jsonData.item.long);
-//    $("#date").text(jsonData.item.condition.date);
-//    $("#temp").text(jsonData.item.condition.temp).append('&#176;F');
-//    $("#desc").text(jsonData.item.condition.text);
-    
-    
-    
-    
-    
+
     // ADD CURRENT WEATHER CODE AS IMAGE
     var currentImg = _imgBaseURL + jsonData.item.condition.code + _imgBackURL;
     $("#currentWeatherImg").append(currentImg);
