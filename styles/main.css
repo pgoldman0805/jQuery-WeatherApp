@@ -30,23 +30,25 @@ button {
 
 /* line 31, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 #result {
+  background-color: black;
+  opacity: 0.7;
   padding: 1em;
   margin: 1em 0;
   background-color: rgba(255, 255, 255, 0.85);
   overflow-y: scroll; }
-  /* line 38, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
+  /* line 39, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
   #result #lat, #result #lon {
     font-size: smaller; }
 
-/* line 47, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 48, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .red {
   color: red; }
 
-/* line 50, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 51, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .blue {
   color: blue; }
 
-/* line 54, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
+/* line 55, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 footer {
   background-color: rgba(255, 255, 255, 0.85); }
 

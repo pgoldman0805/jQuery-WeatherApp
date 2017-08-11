@@ -1,7 +1,6 @@
 //var map;
 $(document).ready(function () {
 
-    
     $("#submitBtn").click(function () {
 
         $("#result").addClass('hidden');
@@ -13,6 +12,14 @@ $(document).ready(function () {
         $("#googleMap").removeClass('hidden');
         $("#result").removeClass('hidden');
         return false;
+    });
+    
+    $("#toggleTempMode").click(function(){
+        if (this.text() === "F")
+            this.text("C");
+        else
+            this.text("F");
+        return false; 
     });
 });
 
@@ -51,7 +58,9 @@ function getData() {
 }
 function setFields(){
     setCurrentWeather();
+    setAtmosphere();
     setForecasts();
+    
 }
 
 
@@ -116,18 +125,25 @@ function setCurrentWeather() {
     
     var formattedTime = time[4] + ' ' + time[5] + ' ' + time[6];
     
-    $("#currentWeather").append('<h4>' + formattedTitle + '</h4>');
+    $("#currentWeather").append('<h3>' + formattedTitle + '</h3>');
     $("#currentWeather").append('<h6>as of ' + formattedTime + '</h6>');
     
     
     var temp = jsonData.item.condition.temp;
-    $("#currentWeatherImg").append('<h2 id="temp">' + temp + '&#176;F</h2>');
+    $("#currentWeatherImg").append('<h2 id="temp">' + temp + '&#176;<span id="toggleTempMode">F</span></h2>');
 
     // ADD CURRENT WEATHER CODE AS IMAGE
     var currentImg = _imgBaseURL + jsonData.item.condition.code + _imgBackURL;
     $("#currentWeatherImg").append(currentImg);
 }
-
+function setAtmosphere(){
+    $("#atmosphere").append("<h3 class='text-center'>Atmosphere</h3>");
+    $("#atmosphere").append("<h5 class='text-center'>Humidity: " + jsonData.atmosphere.humidity + "%</h5>");
+    $("#atmosphere").append("<h5 class='text-center'>Pressure: " + jsonData.atmosphere.pressure.toLocaleString() + " inches</h5>");
+    $("#atmosphere").append("<h5 class='text-center'>Visibility: " + jsonData.atmosphere.visibility + " miles</h5>");
+    $("#atmosphere").append("<h5 class='text-center'>Wind speed: " + jsonData.wind.speed + " mph</h5>");
+    
+}
 function setForecasts() {
     $("#forecast").append("<h3 class='text-center'>10-Day Forecast</h3>");
 
@@ -180,6 +196,7 @@ function myMap() {
 function setFields() {
 
     setCurrentWeather();
+    setAtmosphere();
     setForecasts();
 }
 function clearFields() {
@@ -192,4 +209,5 @@ function clearFields() {
     $("#forecast").empty();
     $("#currentWeather").empty();
     $("#currentWeatherImg").empty();
+    $("#atmosphere").empty();
 }
