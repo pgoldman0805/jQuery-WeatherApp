@@ -78,7 +78,7 @@ function setCurrentWeather() {
     var time = jsonData.lastBuildDate.split(' ');
     var currentTime = time[4].split(':')[0];
     var amOrPm = time[5];
-    
+//    console.log(currentTime);
     // MORNING == between 6am-11am
     // DAY == between 12pm-5pm
     // EVENING == between 6pm-11pm
@@ -86,12 +86,13 @@ function setCurrentWeather() {
     var dayPeriod = "";
     if (currentTime >= 6 && currentTime <= 11 && amOrPm == "AM")
         dayPeriod = "morning";
-    else if (currentTime >= 12 && currentTime <= 5 && amOrPm == "PM")
+    else if ((currentTime === 12 ** amOrPm === "AM") || (currentTime <= 5 && amOrPm == "PM"))
         dayPeriod = "day";
     else if (currentTime >= 6 && currentTime <= 11 && amOrPm == "PM")
         dayPeriod = "evening";
     else
         dayPeriod = "night";
+//    console.log(dayPeriod);
     
     if (desc.indexOf("Rain") !== -1 || desc.indexOf("Shower") !== -1){
         if (dayPeriod === "morning" || dayPeriod === "day")
@@ -104,7 +105,7 @@ function setCurrentWeather() {
             $(".bg").css('background-image','url("/assets/images/partly_cloudy_day.jpg")');
         else if (dayPeriod === "evening")
             $(".bg").css('background-image','url("/assets/images/cloudy_evening.jpg")');
-        else
+        else if (dayPeriod === "night")
             $(".bg").css('background-image','url("/assets/images/cloudy_night.jpg")');
     }
     else if (desc.indexOf("Sunny") !== -1 || desc.indexOf("Clear") !== -1){
