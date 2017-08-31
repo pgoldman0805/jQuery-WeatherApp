@@ -35,6 +35,7 @@
     var _geoLocationQuery = "select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D'";
 
     var jsonData = "";
+    
 
     function handleResult(json) {
         $.each(json, function (i, field) {
@@ -78,6 +79,7 @@
 
 
         // UPDATE BACKGROUND BASED ON CURRENT TIME
+        var imgPrefix = "https://github.com/pgoldman0805/jQuery-WeatherApp/tree/master/assets/images/";
         var desc = jsonData.item.condition.text;
         var time = jsonData.lastBuildDate.split(' ');
         var currentTime = time[4].split(':')[0];
@@ -98,23 +100,23 @@
 
         if (desc.indexOf("Rain") !== -1 || desc.indexOf("Shower") !== -1) {
             if (dayPeriod === "morning" || dayPeriod === "day")
-                $(".bg").css('background-image', 'url("/assets/images/rainy_day.jpg")');
+                $(".bg").css('background-image', 'url("../assets/images/rainyDay.jpg")');
             else
-                $(".bg").css('background-image', 'url("/assets/images/rainy_night.jpg")');
+                $(".bg").css('background-image', 'url("../assets/images/rainyNight.jpg")');
         } else if (desc.indexOf("Cloudy") !== -1) {
             if (dayPeriod === "morning" || dayPeriod === "day")
-                $(".bg").css('background-image', 'url("/assets/images/partly_cloudy_day.jpg")');
+                $(".bg").css('background-image', 'url("../assets/images/partlyCloudyDay.jpg")');
             else if (dayPeriod === "evening")
-                $(".bg").css('background-image', 'url("/assets/images/cloudy_evening.jpg")');
+                $(".bg").css('background-image', 'url("../assets/images/cloudyEvening.jpg")');
             else if (dayPeriod === "night")
-                $(".bg").css('background-image', 'url("/assets/images/cloudy_night.jpg")');
+                $(".bg").css('background-image', 'url("../assets/images/cloudyNight.jpg")');
         } else if (desc.indexOf("Sunny") !== -1 || desc.indexOf("Clear") !== -1) {
             if (dayPeriod === "morning" || dayPeriod === "day")
-                $(".bg").css('background-image', 'url("/assets/images/sunny_day.jpg")');
+                $(".bg").css('background-image', 'url("../assets/images/sunnyDay.jpg")');
             else
-                $(".bg").css('background-image', 'url("/assets/images/night.jpg")');
+                $(".bg").css('background-image', 'url("../assets/images/night.jpg")');
         } else if (desc.indexOf("Thunderstorms") !== -1)
-            $(".bg").css('background-image', 'url("/assets/images/stormy_night.jpg")');
+            $(".bg").css('background-image', 'url("../assets/images/stormyNight.jpg")');
 
 
         $("body").addClass("bg");
