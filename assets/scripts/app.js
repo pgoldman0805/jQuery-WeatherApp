@@ -100,23 +100,23 @@
 
         if (desc.indexOf("Rain") !== -1 || desc.indexOf("Shower") !== -1) {
             if (dayPeriod === "morning" || dayPeriod === "day")
-                $(".bg").css('background-image', 'url("../assets/images/rainyDay.jpg")');
+                $(".bg").css('background-image', 'url("/assets/images/rainyDay.jpg")');
             else
-                $(".bg").css('background-image', 'url("../assets/images/rainyNight.jpg")');
+                $(".bg").css('background-image', 'url("/assets/images/rainyNight.jpg")');
         } else if (desc.indexOf("Cloudy") !== -1) {
             if (dayPeriod === "morning" || dayPeriod === "day")
-                $(".bg").css('background-image', 'url("../assets/images/partlyCloudyDay.jpg")');
+                $(".bg").css('background-image', 'url("/assets/images/partlyCloudyDay.jpg")');
             else if (dayPeriod === "evening")
-                $(".bg").css('background-image', 'url("../assets/images/cloudyEvening.jpg")');
+                $(".bg").css('background-image', 'url("/assets/images/cloudyEvening.jpg")');
             else if (dayPeriod === "night")
-                $(".bg").css('background-image', 'url("../assets/images/cloudyNight.jpg")');
+                $(".bg").css('background-image', 'url("/assets/images/cloudyNight.jpg")');
         } else if (desc.indexOf("Sunny") !== -1 || desc.indexOf("Clear") !== -1) {
             if (dayPeriod === "morning" || dayPeriod === "day")
-                $(".bg").css('background-image', 'url("../assets/images/sunnyDay.jpg")');
+                $(".bg").css('background-image', 'url("/assets/images/sunnyDay.jpg")');
             else
-                $(".bg").css('background-image', 'url("../assets/images/night.jpg")');
+                $(".bg").css('background-image', 'url("/assets/images/night.jpg")');
         } else if (desc.indexOf("Thunderstorms") !== -1)
-            $(".bg").css('background-image', 'url("../assets/images/stormyNight.jpg")');
+            $(".bg").css('background-image', 'url("/assets/images/stormyNight.jpg")');
 
 
         $("body").addClass("bg");
