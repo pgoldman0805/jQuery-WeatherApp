@@ -1,12 +1,13 @@
-/* line 3, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .hidden {
   display: none; }
 
-/* line 6, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .float-right {
   float: right; }
 
-/* line 11, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
+.yahoo-logo {
+  margin-top: -4.2em;
+  margin-bottom: -6em; }
+
 .bg {
   height: 100%;
   background-size: cover;
@@ -14,21 +15,20 @@
   background-attachment: fixed;
   background-repeat: none; }
 
-/* line 20, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .jumbotron {
-  opacity: 0.65385;
+  padding-top: -10px;
+  margin-top: -10px;
+  padding-bottom: -200px;
+  opacity: 0.6538461538;
   background-color: #ded; }
 
-/* line 24, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 #main {
   margin-left: 2em;
   margin-right: 2em; }
 
-/* line 28, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 button {
   margin-top: 1em; }
 
-/* line 31, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 #result {
   background-color: black;
   opacity: 0.7;
@@ -36,19 +36,15 @@ button {
   margin: 1em 0;
   background-color: rgba(255, 255, 255, 0.85);
   overflow-y: scroll; }
-  /* line 39, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
   #result #lat, #result #lon {
     font-size: smaller; }
 
-/* line 48, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .red {
   color: red; }
 
-/* line 51, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 .blue {
   color: blue; }
 
-/* line 55, /Users/paulgoldman/Documents/GitHub/jQuery_WeatherApp/jQuery-WeatherApp/styles/main.scss */
 footer {
   background-color: rgba(255, 255, 255, 0.85); }
 

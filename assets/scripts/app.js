@@ -87,15 +87,14 @@
         // EVENING == between 6pm-11pm
         // NIGHT == between 12am-5am
         var dayPeriod = "";
-        if (currentTime >= 6 && currentTime <= 11 && amOrPm == "AM")
+        if (currentTime >= 6 && currentTime <= 11 && amOrPm === "AM")
             dayPeriod = "morning";
-        else if ((currentTime === 12 ** amOrPm === "AM") || (currentTime <= 5 && amOrPm == "PM"))
+        else if ((currentTime == 12 || currentTime <= 5) && amOrPm === "PM")
             dayPeriod = "day";
-        else if (currentTime >= 6 && currentTime <= 11 && amOrPm == "PM")
+        else if (currentTime >= 6 && currentTime <= 11 && amOrPm === "PM")
             dayPeriod = "evening";
-        else
+        else if ((currentTime == 12 || currentTime <= 5) && amOrPm === "AM")
             dayPeriod = "night";
-        //    console.log(dayPeriod);
 
         if (desc.indexOf("Rain") !== -1 || desc.indexOf("Shower") !== -1) {
             if (dayPeriod === "morning" || dayPeriod === "day")
