@@ -117,6 +117,8 @@
                 $(".bg").css('background-image', 'url("assets/images/night.jpg")');
         } else if (desc.indexOf("Thunderstorms") !== -1)
             $(".bg").css('background-image', 'url("assets/images/stormyNight.jpg")');
+        else
+            $(".bg").css('background-image', 'none');
 
 
         $("body").addClass("bg");
