@@ -1,5 +1,10 @@
 $opacity: 0.85;
 
+body {
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+}
 .hidden {
     display: none;
 }
@@ -58,5 +63,22 @@ button {
 }
 
 footer {
-    background-color: rgba(255,255,255,$opacity);
+//    margin: 0 auto;
+//    text-align: center;
+    div > h5 {
+        
+//        width: %;
+        background-color:  rgba(255,255,255,$opacity/1.5);
+    }
+//    margin-top: -20px;
+    position: absolute;
+    bottom: 0;
+//    top: 100;
+//    background-color: rgba(255,255,255,$opacity);
+//    width: 20px;
+//    h5 {
+//        width: 20%;
+//    }
+    
+    
 }
