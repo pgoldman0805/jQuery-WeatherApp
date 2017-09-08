@@ -35,12 +35,12 @@
     var _geoLocationQuery = "select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D'";
 
     var jsonData = "";
-    
+
 
     function handleResult(json) {
         $.each(json, function (i, field) {
             jsonData = field.results.channel;
-            console.log(jsonData);
+//            console.log(jsonData);
             $("#desc").text(jsonData);
             setFields();
             myMap();
@@ -79,7 +79,6 @@
 
 
         // UPDATE BACKGROUND BASED ON CURRENT TIME
-        var imgPrefix = "https://github.com/pgoldman0805/jQuery-WeatherApp/tree/master/assets/images/";
         var desc = jsonData.item.condition.text;
         var time = jsonData.lastBuildDate.split(' ');
         var currentTime = time[4].split(':')[0];
@@ -118,7 +117,7 @@
         } else if (desc.indexOf("Thunderstorms") !== -1)
             $(".bg").css('background-image', 'url("assets/images/stormyNight.jpg")');
         else
-            $(".bg").css('background-image', 'none');
+            $(".bg").css('background-image', 'url("assets/images/sunnyMorning.jpg")');
 
 
         $("body").addClass("bg");

@@ -12,10 +12,9 @@ $opacity: 0.85;
 }
 
 .bg {
-//  background-image:url("/assets/images/sunny_morning.jpg");
-  height: 100%;
+  background-image:url(../assets/images/sunset1.jpg);
   background-size: cover;
-    background-position: center;
+//    background-position: center;
   background-attachment: fixed;
   background-repeat:none;
 }
@@ -36,7 +35,7 @@ button {
 }
 #result {
     background-color: black;
-    opacity: 0.7;
+    opacity: 0.8;
     padding: 1em;
     margin: 1em 0;
     background-color: rgba(255,255,255,$opacity);
